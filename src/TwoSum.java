@@ -1,22 +1,26 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class TwoSum {
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(twoSum(new int[] { 2, 5, 5, 11 }, 10)));
+		System.out.println(Arrays.toString(twoSum(new int[] { 3,2,3 }, 6)));
 	}
 
 	public static int[] twoSum(int[] nums, int target) {
+		List<Integer> num = Arrays.stream(nums).boxed().toList();
+		System.out.println(num.toString());
 		for (int i = 0; i < nums.length; i++) {
-
-			for (int j = 1; j < nums.length; j++) {
-
-				if ((nums[i] + nums[j] == target) && i != j) {
-
-					return new int[] { i, j };
-				}
+			int comp = target - nums[i];
+			System.out.println(comp);
+			if (num.contains(comp)&& i!=num.indexOf(comp)) {
+				System.out.println(comp+" present");
+				return new int[] {i, num.indexOf(comp)};
 			}
 		}
-		return new int[0];
+		return new int[] {};
 	}
 }
