@@ -18,7 +18,6 @@ public class TwoSum {
 			}
 			comps.put(comp, i);
 		}
-
-		return new int[0];
+	return new int[0];
 	}
 }
